@@ -1,0 +1,20 @@
+<div style="border: 1px solid grey; padding: .5cm;">
+    {{#if avatar_url}}
+        <img src="{{avatar_url}}" style="border-radius: 100%; width:1cm; height:1cm;"/>
+    {{/if}}
+    <div>{{name}}</div>
+    <div class="likes">
+        ❤️  {{favorited_by.length}}
+        {{#each favorited_by}}
+            <img src="{{image_url}}" style="border-radius: 100%; width:.5cm; height:.5cm;"/>
+        {{/each}}
+    </div>
+    {{#if text}}
+        <p>{{text}}</p>
+    {{/if}}
+    {{#each attachments}}
+        {{#ifEquals type 'image'}}
+            <img src="{{url}}" style="height:10cm; width;4cm"/>
+        {{/ifEquals}}
+    {{/each}}
+</div>
